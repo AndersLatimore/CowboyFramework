@@ -2,7 +2,7 @@
 /**
 * Bootstrapping, setting up and loading the core.
 *
-* @package LydiaCore
+* @package CowboyCore
 */
 
 /**
@@ -10,8 +10,8 @@
 */
 function autoload($aClassName) {
   $classFile = "/src/{$aClassName}/{$aClassName}.php";
-   $file1 = LYDIA_INSTALL_PATH . $classFile;
-   $file2 = LYDIA_SITE_PATH . $classFile;
+   $file1 = COWBOY_INSTALL_PATH . $classFile;
+   $file2 = COWBOY_SITE_PATH . $classFile;
    if(is_file($file1)) {
       require_once($file1);
    } elseif(is_file($file2)) {

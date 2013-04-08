@@ -1,10 +1,10 @@
 <?php
 /**
- * Main class for Lydia, holds everything.
+ * Main class for Cowboy, holds everything.
  *
- * @package LydiaCore
+ * @package CowboyCore
  */
-class CLydia implements ISingleton {
+class CCowboy implements ISingleton {
 
   private static $instance = null;
 
@@ -13,18 +13,18 @@ class CLydia implements ISingleton {
    */
   protected function __construct() {
     // include the site specific config.php and create a ref to $ly to be used by config.php
-    $ly = &$this;
-    require(LYDIA_SITE_PATH.'/config.php');
+    $cw = &$this;
+    require(COWBOY_SITE_PATH.'/config.php');
   }
   
   
   /**
    * Singleton pattern. Get the instance of the latest created object or create a new one. 
-   * @return CLydia The instance of this class.
+   * @return CCowboy The instance of this class.
    */
   public static function Instance() {
     if(self::$instance == null) {
-      self::$instance = new CLydia();
+      self::$instance = new CCowboy();
     }
     return self::$instance;
   }
@@ -84,15 +84,15 @@ class CLydia implements ISingleton {
   public function ThemeEngineRender() {
     // Get the paths and settings for the theme
     $themeName   = $this->config['theme']['name'];
-    $themePath   = LYDIA_INSTALL_PATH . "/themes/{$themeName}";
+    $themePath   = COWBOY_INSTALL_PATH . "/themes/{$themeName}";
     $themeUrl    = $this->request->base_url . "themes/{$themeName}";
     
     // Add stylesheet path to the $ly->data array
     $this->data['stylesheet'] = "{$themeUrl}/style.css";
 
     // Include the global functions.php and the functions.php that are part of the theme
-    $ly = &$this;
-    include(LYDIA_INSTALL_PATH . '/themes/functions.php');
+    $cw = &$this;
+    include(COWBOY_INSTALL_PATH . '/themes/functions.php');
     $functionsPath = "{$themePath}/functions.php";
     if(is_file($functionsPath)) {
       include $functionsPath;
