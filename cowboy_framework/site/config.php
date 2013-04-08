@@ -11,6 +11,15 @@ error_reporting(-1);
 ini_set('display_errors', 1);
 
 /**
+ * What type of urls should be used?
+ * 
+ * default      = 0      => index.php/controller/method/arg1/arg2/arg3
+ * clean        = 1      => controller/method/arg1/arg2/arg3
+ * querystring  = 2      => index.php?q=controller/method/arg1/arg2/arg3
+ */
+$cw->config['url_type'] = 1;
+
+/**
  * Set a base_url to use another than the default calculated
  */
 $cw->config['base_url'] = null;
@@ -47,6 +56,7 @@ $cw->config['language'] = 'en';
  */
 $cw->config['controllers'] = array(
   'index'     => array('enabled' => true,'class' => 'CCIndex'),
+  'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
 );
 
 /**
@@ -56,14 +66,5 @@ $cw->config['theme'] = array(
   // The name of the theme in the theme directory
   'name'    => 'core', 
 );
-
-/**
-* What type of urls should be used?
-*
-* default      = 0      => index.php/controller/method/arg1/arg2/arg3
-* clean        = 1      => controller/method/arg1/arg2/arg3
-* querystring  = 2      => index.php?q=controller/method/arg1/arg2/arg3
-*/
-$cw->config['url_type'] = 1;
 
 
