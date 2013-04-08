@@ -1,2 +1,0 @@
-RewriteEngine on 
-RewriteRule ^image/(.*)$ img/img.php?src=$1 [QSA,NC,L]
