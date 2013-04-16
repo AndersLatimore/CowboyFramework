@@ -1,17 +1,21 @@
 <?php
 /**
- * Helpers for the template file.
- */
+* Helpers for the template file.
+*/
 
 /**
- * Add static entries in the template file. 
- */
-$cw->data['header'] = '<h1>Header: Cowboy (Based on Lydia)</h1>';
-$cw->data['main']   = '<p>Main: Now with a theme engine, Not much more to report for now.</p>';
+* Add static entries for use in the template file.
+*/
+$cw->data['header'] = 'Cowboy';
+$cw->data['slogan'] = 'A PHP-based MVC-inspired CMF';
+$cw->data['favicon'] = theme_url('logo_80x80.png');
+$cw->data['logo'] = theme_url('logo_80x80.png');
+$cw->data['logo_width'] = 80;
+$cw->data['logo_height'] = 80;
 $cw->data['footer'] = <<<EOD
-<p>Footer: &copy; Cowboy (Based on Lydia by Mikael Roos) by Anders Akesson (andy_akesson@me.com)</p>
+<p>Cowboy &copy; by Anders Akesson (andy_akesson@me.com)</p>
 
-<p>Tools: 
+<p>Tools:
 <a href="http://validator.w3.org/check/referer">html5</a>
 <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">css3</a>
 <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css21">css21</a>
