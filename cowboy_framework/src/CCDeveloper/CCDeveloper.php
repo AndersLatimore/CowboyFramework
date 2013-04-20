@@ -30,7 +30,7 @@ $this->Menu();
 
 $this->data['main'] .= <<<EOD
 <h2>Dumping content of CDeveloper</h2>
-<p>Here is the content of the controller, including properties from CObject which holds access to common resources in CCowboy.</p>
+<p>Here is the content of the controller, including properties from CObject which holds access to common resources in CLydia.</p>
 EOD;
 $this->data['main'] .= '<pre>' . htmlent(print_r($this, true)) . '</pre>';
 }
@@ -92,4 +92,4 @@ $html
 EOD;
   }
   
-}  
+}     

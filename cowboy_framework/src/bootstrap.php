@@ -10,13 +10,13 @@
 */
 function autoload($aClassName) {
   $classFile = "/src/{$aClassName}/{$aClassName}.php";
-  	$file1 = COWBOY_SITE_PATH . $classFile;
-  	$file2 = COWBOY_INSTALL_PATH . $classFile;
-  	if(is_file($file1)) {
-  		require_once($file1);
-  	} elseif(is_file($file2)) {
-  		require_once($file2);
-  	}
+$file1 = COWBOY_SITE_PATH . $classFile;
+$file2 = COWBOY_INSTALL_PATH . $classFile;
+if(is_file($file1)) {
+require_once($file1);
+} elseif(is_file($file2)) {
+require_once($file2);
+}
 }
 spl_autoload_register('autoload');
 
@@ -24,10 +24,10 @@ spl_autoload_register('autoload');
 /**
 * Set a default exception handler and enable logging in it.
 */
-function exception_handler($e) {
+function exceptionHandler($e) {
   echo "Cowboy: Uncaught exception: <p>" . $e->getMessage() . "</p><pre>" . $e->getTraceAsString(), "</pre>";
 }
-set_exception_handler('exception_handler');
+set_exception_handler('exceptionHandler');
 
 
 /**
@@ -42,6 +42,7 @@ function getIncludeContents($filename, $vars=array()) {
   }
   return false;
 }
+
 
 /**
 * Helper, wrap html_entites with correct character encoding

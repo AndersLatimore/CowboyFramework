@@ -5,5 +5,5 @@
 * @package CowboyCore
 */
 interface IController {
-  public function Index();
+	public function Index();
 }

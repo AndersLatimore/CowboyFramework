@@ -80,4 +80,4 @@ class CMGuestbook extends CObject implements IHasSQL {
   }
 
   
-} 
+}  

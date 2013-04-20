@@ -1,12 +1,12 @@
 <?php
 /**
- * Site configuration, this file is changed by user per site.
- *
- */
+* Site configuration, this file is changed by user per site.
+*
+*/
 
 /**
- * Set level of error reporting
- */
+* Set level of error reporting
+*/
 error_reporting(-1);
 ini_set('display_errors', 1);
 
@@ -28,43 +28,55 @@ $cw->config['database'][0]['dsn'] = 'sqlite:' . COWBOY_SITE_PATH . '/data/.ht.sq
 
 
 /**
- * What type of urls should be used?
- * 
- * default      = 0      => index.php/controller/method/arg1/arg2/arg3
- * clean        = 1      => controller/method/arg1/arg2/arg3
- * querystring  = 2      => index.php?q=controller/method/arg1/arg2/arg3
- */
+* What type of urls should be used?
+*
+* default = 0 => index.php/controller/method/arg1/arg2/arg3
+* clean = 1 => controller/method/arg1/arg2/arg3
+* querystring = 2 => index.php?q=controller/method/arg1/arg2/arg3
+*/
 $cw->config['url_type'] = 1;
 
 
 /**
- * Set a base_url to use another than the default calculated
- */
+* Set a base_url to use another than the default calculated
+*/
 $cw->config['base_url'] = null;
 
 
 /**
- * Define session name
- */
-$cw->config['session_name'] = preg_replace('/[:\.\/-_]/', '', $_SERVER["SERVER_NAME"]);
+* How to hash password of new users, choose from: plain, md5salt, md5, sha1salt, sha1.
+*/
+$cw->config['hashing_algorithm'] = 'sha1salt';
+
+
+/**
+* Allow or disallow creation of new user accounts.
+*/
+$cw->config['create_new_users'] = true;
+
+
+/**
+* Define session name
+*/
+$cw->config['session_name'] = preg_replace('/[:\.\/-_]/', '', __DIR__);
 $cw->config['session_key'] = 'cowboy';
 
 
 /**
- * Define server timezone
- */
+* Define server timezone
+*/
 $cw->config['timezone'] = 'Europe/Stockholm';
 
 
 /**
- * Define internal character encoding
- */
+* Define internal character encoding
+*/
 $cw->config['character_encoding'] = 'UTF-8';
 
 
 /**
- * Define language
- */
+* Define language
+*/
 $cw->config['language'] = 'en';
 
 
@@ -81,14 +93,14 @@ $cw->config['controllers'] = array(
   'index' => array('enabled' => true,'class' => 'CCIndex'),
   'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
   'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
+  'user' => array('enabled' => true,'class' => 'CCUser'),
+  'acp' => array('enabled' => true,'class' => 'CCAdminControlPanel'),
 );
 
 /**
- * Settings for the theme.
- */
+* Settings for the theme.
+*/
 $cw->config['theme'] = array(
   // The name of the theme in the theme directory
-  'name'    => 'core', 
+  'name' => 'core',
 );
-
-
