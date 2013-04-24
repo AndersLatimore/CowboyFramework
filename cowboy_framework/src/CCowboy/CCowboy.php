@@ -6,8 +6,6 @@
 */
 class CCowboy implements ISingleton {
 
-	
-
 /**
 * Members
 */
@@ -39,8 +37,8 @@ session_start();
 $this->session = new CSession($this->config['session_key']);
 $this->session->PopulateFromSession();
 
-// Set default date/time-zone
-date_default_timezone_set($this->config['timezone']);
+	// Set default date/time-zone
+date_default_timezone_set('UTC');
 
 // Create a database object.
 if(isset($this->config['database'][0]['dsn'])) {

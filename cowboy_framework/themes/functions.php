@@ -88,6 +88,40 @@ function get_gravatar($size=null) {
 
 
 /**
+* Escape data to make it safe to write in the browser.
+*
+* @param $str string to escape.
+* @returns string the escaped string.
+*/
+function esc($str) {
+  return htmlEnt($str);
+}
+
+
+/**
+* Filter data according to a filter. Uses CMContent::Filter()
+*
+* @param $data string the data-string to filter.
+* @param $filter string the filter to use.
+* @returns string the filtered string.
+*/
+function filter_data($data, $filter) {
+  return CMContent::Filter($data, $filter);
+}
+
+
+/**
+* Display diff of time between now and a datetime.
+*
+* @param $start datetime|string
+* @returns string
+*/
+function time_diff($start) {
+  return formatDateTimeDiff($start);
+}
+
+
+/**
 * Prepend the base_url.
 */
 function base_url($url=null) {
