@@ -6,7 +6,7 @@
 */
 class CCowboy implements ISingleton {
 
-/**
+	/**
 * Members
 */
 private static $instance = null;
@@ -37,7 +37,7 @@ session_start();
 $this->session = new CSession($this->config['session_key']);
 $this->session->PopulateFromSession();
 
-	// Set default date/time-zone
+// Set default date/time-zone
 date_default_timezone_set('UTC');
 
 // Create a database object.
@@ -122,9 +122,7 @@ return self::$instance;
     $this->session->StoreInSession();
   
     // Is theme enabled?
-    if(!isset($this->config['theme'])) {
-      return;
-    }
+    if(!isset($this->config['theme'])) { return; }
     
     // Get the paths and settings for the theme
     $themeName = $this->config['theme']['name'];
@@ -132,8 +130,8 @@ return self::$instance;
     $themeUrl	= $this->request->base_url . "themes/{$themeName}";
     
     // Add stylesheet path to the $ly->data array
-    $this->data['stylesheet'] = "{$themeUrl}/style.css";
-
+    $this->data['stylesheet'] = "{$themeUrl}/".$this->config['theme']['stylesheet'];
+    
     // Include the global functions.php and the functions.php that are part of the theme
     $cw = &$this;
     include(COWBOY_INSTALL_PATH . '/themes/functions.php');
@@ -145,7 +143,11 @@ return self::$instance;
     // Extract $ly->data to own variables and handover to the template file
     extract($this->data);
     extract($this->views->GetData());
-    include("{$themePath}/default.tpl.php");
+    if(isset($this->config['theme']['data'])) {
+      extract($this->config['theme']['data']);
+    }
+    $templateFile = (isset($this->config['theme']['template_file'])) ? $this->config['theme']['template_file'] : 'default.tpl.php';
+    include("{$themePath}/{$templateFile}");
   }
 
 }

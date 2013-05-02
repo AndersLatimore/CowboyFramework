@@ -174,7 +174,7 @@ class CMUser extends CObject implements IHasSQL, ArrayAccess {
 */
   public function CreatePassword($plain, $algorithm=null) {
     $password = array(
-      'algorithm'=>($algorithm ? $algoritm : CLydia::Instance()->config['hashing_algorithm']),
+      'algorithm'=>($algorithm ? $algoritm : CCowboy::Instance()->config['hashing_algorithm']),
       'salt'=>null
     );
     switch($password['algorithm']) {
@@ -230,7 +230,7 @@ class CMUser extends CObject implements IHasSQL, ArrayAccess {
 */
   public function ChangePassword($plain) {
     $password = $this->CreatePassword($plain);
-    $this->db->ExecuteQuery(self::SQL('update password'), array($password['algoritm'], $password['salt'], $password['password'], $this['id']));
+    $this->db->ExecuteQuery(self::SQL('update password'), array($password['algorithm'], $password['salt'], $password['password'], $this['id']));
     return $this->db->RowCount() === 1;
   }
   
