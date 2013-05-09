@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:10:"style.less";s:8:"compiled";s:8084:"html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+a:4:{s:4:"root";s:10:"style.less";s:8:"compiled";s:8155:"html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
  margin:0;
  padding:0;
  border:0;
@@ -182,7 +182,7 @@ body {
 }
 #login-menu {
  float:right;
- font-size:smaller;
+ font-size:0.95em;
 }
 #login-menu img.gravatar { vertical-align:middle; }
 #login-menu a { text-decoration:none; }
@@ -273,6 +273,11 @@ body {
  width:300px;
  margin:0 10px;
 }
+#sidebar .box {
+ border-top:4px double #cccccc;
+ padding-top:11px;
+ margin-bottom:51px;
+}
 #inner-wrap-triptych {
  width:960px;
  margin:0 auto;
@@ -311,7 +316,6 @@ body {
  float:left;
  width:220px;
  margin:0 10px;
- font-size:0.9em;
  margin-top:1em;
  height:100%;
  background-color:rgba(255,255,255,0.5);
@@ -379,4 +383,4 @@ a:focus {
 .info a { color:#205791; }
 .smaller-text { font-size:smaller; }
 .silent { color:#999999; }
-";s:5:"files";a:2:{s:77:"/home/saxon/students/20122/anap12/www/cowboy_framework/themes/grid/style.less";i:1367416927;s:105:"/home/saxon/students/20122/anap12/www/cowboy_framework/themes/grid/semantic.gs/stylesheets/less/grid.less";i:1367415323;}s:7:"updated";i:1367418347;}
+";s:5:"files";a:2:{s:77:"/home/saxon/students/20122/anap12/www/cowboy_framework/themes/grid/style.less";i:1368098643;s:105:"/home/saxon/students/20122/anap12/www/cowboy_framework/themes/grid/semantic.gs/stylesheets/less/grid.less";i:1367415323;}s:7:"updated";i:1368099848;}

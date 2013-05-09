@@ -177,10 +177,23 @@ function create_url($urlOrController=null, $method=null, $arguments=null) {
 
 /**
 * Prepend the theme_url, which is the url to the current theme directory.
+*
+* @param $url string the url-part to prepend.
+* @returns string the absolute url.
 */
 function theme_url($url) {
-  $cw = CCowboy::Instance();
-  return "{$cw->request->base_url}themes/{$cw->config['theme']['name']}/{$url}";
+  return create_url(CCowboy::Instance()->themeUrl . "/{$url}");
+}
+
+
+/**
+* Prepend the theme_parent_url, which is the url to the parent theme directory.
+*
+* @param $url string the url-part to prepend.
+* @returns string the absolute url.
+*/
+function theme_parent_url($url) {
+  return create_url(CCowboy::Instance()->themeParentUrl . "/{$url}");
 }
 
 
