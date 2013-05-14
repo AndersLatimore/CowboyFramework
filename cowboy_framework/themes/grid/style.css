@@ -304,7 +304,7 @@ body {
   margin:0 10px;
 }
 #sidebar .box {
-  border-top:4px double #cccccc;
+  border-top:4px;
   padding-top:11px;
   margin-bottom:51px;
 }
