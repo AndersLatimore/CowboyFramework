@@ -16,7 +16,7 @@ ini_set('display_errors', 1);
 */
 $cw->config['debug']['cowboy'] = false;
 $cw->config['debug']['session'] = false;
-$cwy->config['debug']['timer'] = true;
+$cw->config['debug']['timer'] = true;
 $cw->config['debug']['db-num-queries'] = true;
 $cw->config['debug']['db-queries'] = true;
 
