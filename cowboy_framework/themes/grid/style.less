@@ -205,6 +205,76 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 
 
 /** --------------------------------------------------------------
+* Navbar main menu styles
+*/
+#navbar,#navbar ul.menu {
+    background-image:none;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+}
+#navbar ul {
+    /*left:-9999px;*/
+    position:absolute;
+    top:37px;
+    width:auto;
+}
+#navbar ul ul {
+    /*left:-9999px;*/
+    position:absolute;
+    top:0;
+    width:auto;
+}
+#navbar li {
+    float:left;
+    margin-right:5px;
+    position:relative;
+}
+}
+#navbar > li > a {
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    -o-border-radius:6px;
+    border-radius:6px;
+
+    overflow:hidden;
+}
+#navbar li a.fly {
+    background:#c1c1bf, no-repeat right center;
+    padding-right:15px;
+}
+#navbar ul li {
+    margin:0;
+}
+#navbar ul li a {
+    width:120px;
+}
+#navbar ul li a.fly {
+    padding-right:10px;
+}
+
+/*hover styles*/
+#navbar li:hover > a {
+    background-color:#E8E8E8;
+    
+}
+
+/*focus styles*/
+#navbar li a:focus {
+    outline-width:0;
+}
+
+/*popups*/
+#navbar li a:active + ul.dd,#navbar li a:focus + ul.dd,#navbar li ul.dd:hover {
+    left:0;
+}
+#navbar ul.dd li a:active + ul,#navbar ul.dd li a:focus + ul,#navbar ul.dd li ul:hover {
+    left:140px;
+}
+
+
+/** --------------------------------------------------------------
 * The flash area.
 *
 */

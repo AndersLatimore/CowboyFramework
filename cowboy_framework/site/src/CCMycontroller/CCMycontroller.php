@@ -20,6 +20,17 @@ class CCMycontroller extends CObject implements IController {
                   'content' => $content,
                 ));
   }
+  
+    /**
+* The test page 
+*/
+  public function Test() {
+    $content = new CMContent(6);
+    $this->views->SetTitle('Test page! '.htmlEnt($content['title']))
+                ->AddInclude(__DIR__ . '/test.tpl.php', array(
+                  'content' => $content,
+                ));
+  }
 
 
   /**

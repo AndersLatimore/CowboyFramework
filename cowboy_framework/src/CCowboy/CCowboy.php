@@ -114,7 +114,7 @@ return self::$instance;
   }
   
   
-  /**
+ /**
 * ThemeEngineRender, renders the reply of the request to HTML or whatever.
 */
   public function ThemeEngineRender() {
@@ -139,7 +139,7 @@ return self::$instance;
     // Add stylesheet name to the $cw->data array
     $this->data['stylesheet'] = $this->config['theme']['stylesheet'];
     
-    // Make the theme urls available as part of $ly
+    // Make the theme urls available as part of $cw
     $this->themeUrl = $themeUrl;
     $this->themeParentUrl = $parentUrl;
     
@@ -152,7 +152,7 @@ return self::$instance;
 
     // Include the global functions.php and the functions.php that are part of the theme
     $cw = &$this;
-    // First the default Lydia themes/functions.php
+    // First the default Cowboy themes/functions.php
     include(COWBOY_INSTALL_PATH . '/themes/functions.php');
     // Then the functions.php from the parent theme
     if($parentPath) {
@@ -184,6 +184,7 @@ return self::$instance;
   }
 
 
+  
 /**
 * Redirect to another url and store the session, all redirects should use this method.
 *
@@ -260,15 +261,15 @@ $method = is_null($method) ? $this->request->method : null;
 public function CreateUrl($urlOrController=null, $method=null, $arguments=null) {
     return $this->request->CreateUrl($urlOrController, $method, $arguments);
   }
-
+  
 
   /**
-* Draw HTML for a menu defined in $ly->config['menus'].
+* Draw HTML for a menu defined in $cw->config['menus'].
 *
 * @param $menu string then key to the menu in the config-array.
 * @returns string with the HTML representing the menu.
 */
-  public function DrawMenu($menu) {
+  public function DrawMenu($menu) {	  
     $items = null;
     if(isset($this->config['menus'][$menu])) {
       foreach($this->config['menus'][$menu] as $val) {
@@ -283,6 +284,6 @@ public function CreateUrl($urlOrController=null, $method=null, $arguments=null) 
     }
     return "<ul class='menu {$menu}'>\n{$items}</ul>\n";
   }
-
-
 }
+
+

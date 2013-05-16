@@ -131,6 +131,7 @@ $cw->config['menus'] = array(
     'home' => array('label'=>'About Me', 'url'=>'my'),
     'blog' => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
+    'test' => array('label'=>'Test', 'url'=>'my/test'),
   ),
 );
 
@@ -181,3 +182,4 @@ $cw->config['theme'] = array(
     'footer' => '<p>Cowboy &copy; by Anders Akesson (andy_akesson@me.com)</p>',
   ),
 );
+
