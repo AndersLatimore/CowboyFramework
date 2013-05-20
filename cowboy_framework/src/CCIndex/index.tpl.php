@@ -19,4 +19,7 @@ to be able to write and create files.</p>
 controller. Point your browser to the following link.</p>
 <blockquote>
 <a href='<?=create_url('module/install')?>'>module/install</a>
-</blockquote>					
+</blockquote>
+
+<p>By initializing the modules some default content is created in the database. You can go to 
+<code>CMContent.php</code> where you will be able to see what is created.<p/>
