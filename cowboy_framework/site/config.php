@@ -128,10 +128,12 @@ $cw->config['menus'] = array(
     'blog' => array('label'=>'Blog', 'url'=>'blog'),
   ),
   'my-navbar' => array(
-    'home' => array('label'=>'About Me', 'url'=>'my'),
+    'home' => array('label'=>'Start', 'url'=>'my'),
     'blog' => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
     'test' => array('label'=>'Test', 'url'=>'my/test'),
+    'about' => array('label'=>'About', 'url'=>'my/about'),
+
   ),
 );
 
@@ -179,7 +181,7 @@ $cw->config['theme'] = array(
     'logo' => 'logo_80x80.png',
     'logo_width' => 80,
     'logo_height' => 80,
-    'footer' => '<p>Cowboy &copy; by Anders Akesson (andy_akesson@me.com)</p>',
+    'footer' => '<p>Cowboy &copy; by Anders Akesson <a href="mailto:andy_akesson@me.com?">andy_akesson@me.com</a></p>',
   ),
 );
 

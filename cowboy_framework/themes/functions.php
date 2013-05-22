@@ -68,7 +68,7 @@ function get_debug() {
     $html .= "<p>Page was loaded in " . round(microtime(true) - $cw->timer['first'], 5)*1000 . " msecs.</p>";
   }
   if(isset($cw->config['debug']['cowboy']) && $cw->config['debug']['cowboy']) {
-    $html .= "<hr><h3>Debuginformation</h3><p>The content of CLydia:</p><pre>" . htmlent(print_r($cw, true)) . "</pre>";
+    $html .= "<hr><h3>Debuginformation</h3><p>The content of CCowboy:</p><pre>" . htmlent(print_r($cw, true)) . "</pre>";
   }
   if(isset($cw->config['debug']['session']) && $cw->config['debug']['session']) {
     $html .= "<hr><h3>SESSION</h3><p>The content of CCowboy->session:</p><pre>" . htmlent(print_r($cw->session, true)) . "</pre>";

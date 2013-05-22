@@ -1,6 +1,6 @@
 <h1>Blog</h1>
-<p>All nice news and blogposts about me.</p>
-
+<p>All nice news and blogposts about me and all things that are happening in the world.</p>
+<p><a href='<?=create_url('content', 'create')?>'>Create a new blog post</a></p>
 <?php if($contents != null):?>
   <?php foreach($contents as $val):?>
     <h2><?=esc($val['title'])?></h2>

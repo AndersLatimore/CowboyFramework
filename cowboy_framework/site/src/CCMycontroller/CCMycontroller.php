@@ -11,11 +11,11 @@ class CCMycontroller extends CObject implements IController {
   
 
   /**
-* The page about me
+* The start page
 */
   public function Index() {
-    $content = new CMContent(5);
-    $this->views->SetTitle('Welcome! '.htmlEnt($content['title']))
+    $content = new CMContent(10);
+    $this->views->SetTitle(''.htmlEnt($content['title']))
                 ->AddInclude(__DIR__ . '/page.tpl.php', array(
                   'content' => $content,
                 ));
@@ -26,8 +26,19 @@ class CCMycontroller extends CObject implements IController {
 */
   public function Test() {
     $content = new CMContent(6);
-    $this->views->SetTitle('Test page! '.htmlEnt($content['title']))
+    $this->views->SetTitle('Test '.htmlEnt($content['title']))
                 ->AddInclude(__DIR__ . '/test.tpl.php', array(
+                  'content' => $content,
+                ));
+  }
+  
+      /**
+* The about page 
+*/
+  public function About() {
+    $content = new CMContent(5);
+    $this->views->SetTitle(''.htmlEnt($content['title']))
+                ->AddInclude(__DIR__ . '/about.tpl.php', array(
                   'content' => $content,
                 ));
   }

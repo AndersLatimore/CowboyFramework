@@ -22,4 +22,4 @@ controller. Point your browser to the following link.</p>
 </blockquote>
 
 <p>By initializing the modules some default content is created in the database. You can go to 
-<code>CMContent.php</code> where you will be able to see what is created.<p/>
+<code>CMContent.php</code> where you will be able to see what is created.</p>
